@@ -28,6 +28,10 @@ The program splits the file into multiple smaller and larger JSON files with pre
 - A C++11 compliant compiler (e.g., GCC, Clang, MSVC)
 - CMake (for building the project if using an IDE like CLion)
 
+## Input Files 
+Some datasets can be downloaded from https://drive.google.com/drive/folders/1KQ1DjvIWpHikOg1JgmjlSWM3aAlvq-h7?usp=sharing. For this project, use those datasets that ended in `_small_records.json`.
+
+
 ## Compilation and Usage
 
 ### Using CMake (Recommended)
@@ -39,40 +43,44 @@ The program splits the file into multiple smaller and larger JSON files with pre
    cd your-repo-name
    ```
 
-2. Create a `build` directory and navigate into it:
+2. Change the input `inputFile` in the `main.cpp` code for your corresponding JSON file.
+
+3. Create a `build` directory and navigate into it:
 
    ```bash
    mkdir build
    cd build
    ```
 
-3. Run CMake to generate build files:
+4. Run CMake to generate build files:
 
    ```bash
    cmake ..
    ```
 
-4. Build the project:
+5. Build the project:
 
    ```bash
    make
    ```
 
-5. Run the program with your input JSON file:
+6. Run the program with your input JSON file:
 
    ```bash
-   ./json_splitter input.json
+   ./json_splitter
    ```
 
-   Replace `input.json` with the path to your JSON file.
 
 ### Direct Compilation (Without CMake)
 
 If you'd rather compile the program directly using `g++`, use the following command:
 
+note: make sure to change the input `inputFile` in the `main.cpp` code for your corresponding JSON file. 
+
+
 ```bash
 g++ -std=c++11 -o json_splitter main.cpp
-./json_splitter input.json
+./json_splitter 
 ```
 
 ### Output Files
@@ -101,6 +109,7 @@ Each output file will contain JSON records until the specified size is reached. 
 
 ## License
 
+This project is part of evaluation of https://github.com/ashkanvg/cuJSON project. 
 This project is licensed under the MIT License. See the `LICENSE` file for details.
 
 ---
